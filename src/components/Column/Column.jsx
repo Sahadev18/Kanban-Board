@@ -1,23 +1,28 @@
-import {Reorder} from 'framer-motion'
-import Card from '../Card/Card.jsx'
-import './Column.css'
+import { Droppable } from "react-beautiful-dnd";
+import Card from "../Card/Card.jsx";
+import "./Column.css";
 
-export default function Column({id, name, color, cards, setCards}) {
-    return(
-        <div className="column" id={id}>
-            <h2 style={{backgroundColor: `${color}`}}>{name}</h2>
-            <div className='card-section' id={id + '-card-section'}>
-                <Reorder.Group values={cards} onReorder={setCards}>
-                    {id === 'col1' && (cards.map( (card) =>
-                        <Reorder.Item value={card} key={card.id}>
-                            <Card
-                                {...card}
-                                color={color}
-                            />
-                        </Reorder.Item>
-                    ))}
-                </Reorder.Group>
-            </div>
-        </div>
-    );
+/**
+ * Represents a column within the Kanban board where cards can be placed.
+ */
+export default function Column({ id, name, cards }) {
+  return (
+    <div className="column" id={id}>
+      <h2>{name}</h2>
+      <Droppable droppableId={id}>
+        {(provided) => (
+          <div
+            className="card-section"
+            ref={provided.innerRef}
+            {...provided.droppableProps} // Props for drop behavior
+          >
+            {cards.map((card, index) => (
+              <Card key={card.id} {...card} index={index} />
+            ))}
+            {provided.placeholder} {/* Placeholder for dropped items */}
+          </div>
+        )}
+      </Droppable>
+    </div>
+  );
 }
