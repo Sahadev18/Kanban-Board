@@ -1,29 +1,43 @@
 .column {
   background-color: #f1f2f4;
-  width: 24%;
+  width: 24.5%;
   max-height: 700px;
   user-select: none;
-  overflow-y: scroll;
-  padding: 0 10px 10px 10px;
+  overflow-y: auto;
   height: fit-content;
+  border-radius: 5px;
+  border: 2px solid #2c3e50;
 }
-h2 {
+.column h2 {
   text-align: center;
   padding: 10px 0;
   background-color: #f1f2f4;
-  color: #5d6d7e;
   position: sticky;
   top: 0;
-  margin-bottom: 20px;
   font-size: 22px;
 }
 
 .card-section {
   min-height: 1px;
+  padding: 10px;
 }
 
-button {
-  color: #85929e;
-  background-color: #f1f2f4;
-  font-weight: 400;
+#col-1 h2,
+#col-1 h3 {
+  color: #ec7063;
+}
+
+#col-2 h2,
+#col-2 h3 {
+  color: #af7ac5;
+}
+
+#col-3 h2,
+#col-3 h3 {
+  color: #f4d03f;
+}
+
+#col-4 h2,
+#col-4 h3 {
+  color: #58d68d;
 }

@@ -2,26 +2,18 @@ import { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { v4 as uuidv4 } from "uuid";
 import Column from "../Column/Column.jsx";
-import AddCard from "../AddCard/AddCard.jsx";
+import AddCardButton from "../AddCardButton/AddCardButton.jsx";
+import SearchCard from "../SearchCard/SearchCard.jsx";
 import "./Board.css";
 
 export default function Board({ boardName }) {
-  //State to manage the 'add details' popup model
-  const [popup, setPopup] = useState(false);
-
   //State to manage all the cards in different columns
   const [todos, setTodos] = useState([]);
   const [doings, setDoings] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [dones, setDones] = useState([]);
 
-  //updating the todos cololumn after adding a card
-  function addCard(title, description) {
-    setTodos([
-      ...todos,
-      { id: uuidv4(), title: title, description: description },
-    ]);
-  }
+  const [searchValue, setSearchValue] = useState("");
 
   //updating the board when the dragging of a card ends
   function handleDragEnd(result) {
@@ -72,16 +64,44 @@ export default function Board({ boardName }) {
     <DragDropContext onDragEnd={handleDragEnd}>
       <div id="board">
         <h1>{boardName}</h1>
-        <div id="columns">
-          <Column key="col-1" id="col-1" name="To do" cards={todos} />
-          <Column key="col-2" id="col-2" name="In Progress" cards={doings} />
-          <Column key="col-3" id="col-3" name="Peer Review" cards={reviews} />
-          <Column key="col-4" id="col-4" name="Done" cards={dones} />
+        <div id="add-n-search">
+          <AddCardButton todos={todos} setTodos={setTodos} />
+          <SearchCard onSearch={(value) => setSearchValue(value)} />
         </div>
-        <button className="add-card" onClick={() => setPopup(true)}>
-          Add Card
-        </button>
-        {popup && <AddCard onClose={() => setPopup(false)} addCard={addCard} />}
+        <div id="columns">
+          <Column
+            key="col-1"
+            id="col-1"
+            name="To do"
+            cards={todos}
+            setColumn={setTodos}
+            searchValue={searchValue}
+          />
+          <Column
+            key="col-2"
+            id="col-2"
+            name="In Progress"
+            cards={doings}
+            setColumn={setDoings}
+            searchValue={searchValue}
+          />
+          <Column
+            key="col-3"
+            id="col-3"
+            name="Peer Review"
+            cards={reviews}
+            setColumn={setReviews}
+            searchValue={searchValue}
+          />
+          <Column
+            key="col-4"
+            id="col-4"
+            name="Done"
+            cards={dones}
+            setColumn={setDones}
+            searchValue={searchValue}
+          />
+        </div>
       </div>
     </DragDropContext>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./AddCard.css";
+import "./AddCardDetails.css";
 
 //Renders a form to add a card to the board
 export default function AddCard({ onClose, addCard }) {
@@ -16,11 +16,11 @@ export default function AddCard({ onClose, addCard }) {
     // Check if both title and description are filled before adding the card.
     if (title !== "" && description !== "") {
       addCard(title, description);
-    }
 
-    // Reset the form after successful submission or on cancel.
-    setTitle("");
-    setDescription("");
+      // Reset the form after successful submission or on cancel.
+      setTitle("");
+      setDescription("");
+    }
   }
 
   return (
