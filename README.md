@@ -13,6 +13,7 @@ Key features of a Kanban board include:
 - Drag-and-drop: Users can easily move cards between columns as tasks progress.
 - Delete: User can delete any card that is not required.
 - Search: User can dynamically search for the card by typing the card title name.
+- Reponsive: The Board can be viewed and edited on any screen size with consistent user experience.
 
 ## Tools used for this project:
 
@@ -23,9 +24,9 @@ Key features of a Kanban board include:
 
 ## Internal Libraries used:
 
-- `read-beautiful-dnd` for drag and drop functionality
-- `react-fontawesome` to add dynamic icons
-- `uuid` for generating unique id's
+- `read-beautiful-dnd` for drag and drop functionality.
+- `react-fontawesome` to add dynamic icons.
+- `uuid` for generating unique id's.
 
 ## Set up the Kanban Board:
 
