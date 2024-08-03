@@ -1,9 +1,7 @@
 import { Draggable } from "react-beautiful-dnd";
 import "./Card.css";
 
-/**
- * Represents a draggable card within a column.
- */
+//Renders a draggable card which contains details within column
 export default function Card({ id, title, description, index }) {
   return (
     <Draggable key={id} draggableId={id} index={index}>

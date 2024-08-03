@@ -6,10 +6,10 @@ import AddCard from "../AddCard/AddCard.jsx";
 import "./Board.css";
 
 export default function Board({ boardName }) {
-  //initilizing the popup state
+  //State to manage the 'add details' popup model
   const [popup, setPopup] = useState(false);
 
-  //initilizing state of each column
+  //State to manage all the cards in different columns
   const [todos, setTodos] = useState([]);
   const [doings, setDoings] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -23,9 +23,9 @@ export default function Board({ boardName }) {
     ]);
   }
 
-  //updating the board when the dragging a card ends
+  //updating the board when the dragging of a card ends
   function handleDragEnd(result) {
-    //creating a copy of each array
+    //creating a copy of cards array from each column
     const newTodos = todos.slice();
     const newDoings = doings.slice();
     const newReviews = reviews.slice();
@@ -34,7 +34,7 @@ export default function Board({ boardName }) {
     //active card
     let draggedCard;
 
-    //dropping outside columns
+    //Card being dropped outside the droppable area
     if (!result.destination) return;
 
     //removing card from the source column

@@ -2,9 +2,7 @@ import { Droppable } from "react-beautiful-dnd";
 import Card from "../Card/Card.jsx";
 import "./Column.css";
 
-/**
- * Represents a column within the Kanban board where cards can be placed.
- */
+//Renders a column within the Kanban board where cards can be placed.
 export default function Column({ id, name, cards }) {
   return (
     <div className="column" id={id}>

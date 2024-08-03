@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./AddCard.css";
 
-/**
- * Renders a form to add a new card to the board.
- */
+//Renders a form to add a card to the board
 export default function AddCard({ onClose, addCard }) {
   // State to manage the title of the new card.
   const [title, setTitle] = useState("");
@@ -11,12 +9,7 @@ export default function AddCard({ onClose, addCard }) {
   // State to manage the description of the new card.
   const [description, setDescription] = useState("");
 
-  /**
-   * Handles the form submission event. Validates input and calls the addCard prop
-   * function if both title and description are provided.
-   *
-   * @param {object} event - The form submission event object.
-   */
+  //Handles the form submission event. Validates input and calls the addCard prop function if both title and description are provided.
   function handleClick(event) {
     event.preventDefault();
 
