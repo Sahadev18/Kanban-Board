@@ -4,7 +4,13 @@ Web based Kanban board web app is a digital tool that visually represents a work
 
 ## Kanban Board preview
 
-![Screenshot of the Kanban web app](./public/ui.png)
+### Desktop View
+
+![Screenshot of the Kanban web app for desktop](./public/desktop_ui.png)
+
+### Mobile View
+
+![Screenshot of the Kanban web app mobile](./public/mobile_ui.png)
 
 Key features of a Kanban board include:
 
