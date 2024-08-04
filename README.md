@@ -38,7 +38,7 @@ Key features of a Kanban board include:
 
 - Download the zip file of the project and extract it on a desired location or clone it on your local system using git.
 - After downloading navigate to the project directory on you local system.
-- Run the following command to install all the dependencies: `npm install`, this will install all the dependencies incliding React.
+- Run the following command to install all the dependencies: `npm install`, this will install all the dependencies incliding React and Vite.
 - After running the above command the app is all set to run.
 - now use the command `npm run dev` to start the application on you local server.
 - The Web app is now running on the port number `5173` and can be accessed on the followind address: `localhost:5173`.
