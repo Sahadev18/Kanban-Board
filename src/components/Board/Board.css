@@ -56,3 +56,11 @@
     width: 80vw;
   }
 }
+
+@media (max-width: 360px) {
+  #add-n-search {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}
