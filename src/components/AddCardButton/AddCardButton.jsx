@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { v4 as uuidv4 } from "uuid";
-import AddCardDetails from "../AddCardDetails/AddCardDetails.jsx";
+const AddCardDetails = lazy(() =>
+  import("../AddCardDetails/AddCardDetails.jsx")
+);
 import "./AddCardButton.css";
 
 export default function AddCard({ todos, setTodos }) {
@@ -21,7 +23,9 @@ export default function AddCard({ todos, setTodos }) {
         + Add Card
       </button>
       {popup && (
-        <AddCardDetails onClose={() => setPopup(false)} addCard={addCard} />
+        <Suspense>
+          <AddCardDetails onClose={() => setPopup(false)} addCard={addCard} />
+        </Suspense>
       )}
     </>
   );
