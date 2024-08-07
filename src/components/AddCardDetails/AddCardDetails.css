@@ -20,6 +20,7 @@
   gap: 10px;
   border-radius: 15px;
   align-items: center;
+  border: 1px solid white;
   z-index: 10000; /* Ensure it is above the blurred background */
 }
 
